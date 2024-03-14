@@ -39,8 +39,16 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-function CabinRow() {
-  return <div>Row</div>;
+function CabinRow({ cabin }) {
+  const { name, maxCapacity, regularPrice, discount, description, image } =
+    cabin;
+
+  return (
+    <TableRow role="row">
+      <Img src={image} />
+      <Cabin>{name}</Cabin>
+    </TableRow>
+  );
 }
 
 export default CabinRow;
