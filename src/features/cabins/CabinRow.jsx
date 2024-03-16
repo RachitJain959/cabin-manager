@@ -54,7 +54,7 @@ function CabinRow({ cabin }) {
     maxCapacity,
     regularPrice,
     discount,
-    description,
+    // description,
     image,
   } = cabin;
 
@@ -86,7 +86,7 @@ function CabinRow({ cabin }) {
           </button>
         </div>
       </TableRow>
-      {showForm && <CreateCabinForm />}
+      {showForm && <CreateCabinForm cabinToEdit={cabin} />}
     </>
   );
 }
