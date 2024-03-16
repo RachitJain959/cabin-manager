@@ -50,9 +50,11 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
   function onSubmit(data) {
     // console.log(data.image[0]);
+    // if image is a string, it takes the old url img or it takes the new img from data
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
-    if (isEditSession) editCabin({ newCabinData: { ...data, image }, editId });
+    if (isEditSession)
+      editCabin({ newCabinData: { ...data, image }, id: editId });
     else createCabin({ ...data, image: image });
   }
 
