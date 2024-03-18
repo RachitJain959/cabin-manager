@@ -2,6 +2,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
+import { useUpdateSetting } from "./useUpdateSetting";
 import { useSettings } from "./useSettings";
 
 function UpdateSettingsForm() {
@@ -14,6 +15,8 @@ function UpdateSettingsForm() {
       breakfastPrice,
     } = {},
   } = useSettings();
+
+  const { isUpdating, updateSetting } = useUpdateSetting();
 
   if (isLoading) return <Spinner />;
 
