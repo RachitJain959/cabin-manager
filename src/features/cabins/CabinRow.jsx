@@ -97,9 +97,18 @@ function CabinRow({ cabin }) {
             <Modal.Window>
               <CreateCabinForm cabinToEdit={cabin} />
             </Modal.Window>
-            <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
-              <HiTrash />
-            </button>
+
+            <Modal.Open>
+              <button
+                onClick={() => deleteCabin(cabinId)}
+                disabled={isDeleting}
+              >
+                <HiTrash />
+              </button>
+            </Modal.Open>
+            <Modal.Window>
+              <></>
+            </Modal.Window>
           </Modal>
         </div>
       </TableRow>
