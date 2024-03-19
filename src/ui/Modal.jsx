@@ -52,6 +52,7 @@ const Button = styled.button`
 `;
 
 function Modal({ children, onClose }) {
+  // Portaled the Modal from root element directly into document body.
   return createPortal(
     <Overlay>
       <StyledModal>
