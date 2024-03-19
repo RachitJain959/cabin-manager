@@ -1,4 +1,4 @@
-import AddCabinForm from "../features/cabins/AddCabinModal";
+import AddCabinForm from "../features/cabins/AddCabinForm";
 import CabinTable from "../features/cabins/CabinTable";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
