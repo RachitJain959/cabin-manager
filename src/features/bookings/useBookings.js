@@ -17,7 +17,7 @@ export function useBookings() {
     data: bookings,
     error,
   } = useQuery({
-    queryKey: ["bookings"],
+    queryKey: ["bookings", filter], //react query will refetch the data if any changes in either.
     queryFn: () => getBookings({ filter }),
   });
 
