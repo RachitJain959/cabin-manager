@@ -173,7 +173,8 @@ function handleClick(e) {
 ### 15. Reusable Pagination
 
 - create Pagination.jsx
--
+- get currentPage using searchParams from the url
+- create nextPage & PrevPage
 
 ## Features
 
