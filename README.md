@@ -182,7 +182,10 @@ function handleClick(e) {
   - set query range in apiBookings
 - Prefetching using react query
 
-### 16.
+### 16. Single Booking Page
+
+- Add menus.menu section in bookingRow
+- create navigation route using useNavigate()
 
 ## Features
 
