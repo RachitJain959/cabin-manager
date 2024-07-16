@@ -175,6 +175,8 @@ function handleClick(e) {
 - create Pagination.jsx
 - get currentPage using searchParams from the url
 - create nextPage & PrevPage
+- get exact count from supabase
+- create api-side pagination
 
 ## Features
 
