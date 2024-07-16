@@ -177,6 +177,12 @@ function handleClick(e) {
 - create nextPage & PrevPage
 - get exact count from supabase
 - create api-side pagination
+  - get currentPage from url
+  - create required range of data
+  - set query range in apiBookings
+- Prefetching using react query
+
+### 16.
 
 ## Features
 
