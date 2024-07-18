@@ -9,7 +9,7 @@ import { formatDistanceFromNow } from "../../utils/helpers";
 import Menus from "../../ui/Menus";
 import { HiEye } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import { HiArrowDownOnSquare, HiArrowLeftOnRectangle } from "react-icons/hi2";
+import { HiArrowLeftOnRectangle } from "react-icons/hi2";
 
 const Cabin = styled.div`
   font-size: 1.6rem;

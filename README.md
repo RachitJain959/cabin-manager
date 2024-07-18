@@ -194,6 +194,7 @@ function handleClick(e) {
   - create checkin page
   - create checkinBooking.jsx
   - create checkbox, disable feature, confirm payment, etc.
+  - create useCheckin & confirm checking-in.
 
 ## Features
 
