@@ -188,6 +188,10 @@ function handleClick(e) {
 - create navigation route using useNavigate()
 - create Booking.jsx & BookingDetail.jsx
 - create useBooking custom hook
+- create BookingDataBox & useMoveBack hook
+- checking-in a booking
+  - create check in button in booking menu
+  -
 
 ## Features
 
