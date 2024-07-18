@@ -191,7 +191,8 @@ function handleClick(e) {
 - create BookingDataBox & useMoveBack hook
 - checking-in a booking
   - create check in button in booking menu
-  -
+  - create checkin page
+  - create checkinBooking.jsx
 
 ## Features
 
