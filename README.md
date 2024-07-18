@@ -186,6 +186,8 @@ function handleClick(e) {
 
 - Add menus.menu section in bookingRow
 - create navigation route using useNavigate()
+- create Booking.jsx & BookingDetail.jsx
+- create useBooking custom hook
 
 ## Features
 
