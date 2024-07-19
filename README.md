@@ -195,6 +195,9 @@ function handleClick(e) {
   - create checkinBooking.jsx
   - create checkbox, disable feature, confirm payment, etc.
   - create useCheckin & confirm checking-in.
+  - optional breakfast
+    - create checkbox & disable payment
+    - grab breakfast price from useSettings hook & calculate total payment
 
 ## Features
 
