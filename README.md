@@ -198,6 +198,7 @@ function handleClick(e) {
   - optional breakfast
     - create checkbox & disable payment
     - grab breakfast price from useSettings hook & calculate total payment
+    - update useCheckin hook to accept breakfast object details & update the db
 
 ## Features
 
