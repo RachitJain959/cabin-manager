@@ -12,7 +12,8 @@
 ## Bugs
 
 1. h2 element showing h1: use 'as' instead of 'type' in styled components.
-2.
+2. pagination last page filter: {code: 'PGRST103', details: 'An offset of 15 was requested, but there are only 9 rows.', hint: null, message: 'Requested range not satisfiable'}
+   - Fix: if (searchParams.get("page")) searchParams.set("page", 1);
 
 ## Steps
 
@@ -199,6 +200,9 @@ function handleClick(e) {
     - create checkbox & disable payment
     - grab breakfast price from useSettings hook & calculate total payment
     - update useCheckin hook to accept breakfast object details & update the db
+- checking-out a booking
+- deleting a booking
+  -
 
 ## Features
 
