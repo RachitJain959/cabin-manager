@@ -202,6 +202,8 @@ function handleClick(e) {
     - update useCheckin hook to accept breakfast object details & update the db
 - checking-out a booking
 - deleting a booking
+  - create delete button inside modal within tablerow
+  - create useDeleteBooking.jsx
   -
 
 ## Features
