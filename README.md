@@ -204,7 +204,7 @@ function handleClick(e) {
 - deleting a booking
   - create delete button inside modal within tablerow
   - create useDeleteBooking.jsx
-  -
+  - render deleteBooking in bookingRow & BookingDetails
 
 ## Features
 
