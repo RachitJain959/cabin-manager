@@ -220,6 +220,12 @@ function handleClick(e) {
 - create useUser
 - create useEffect hook to naviagte to either login page or render application based on user login
 
+### 19. User Logout
+
+- create ButtonIcon, Logout.jsx
+- create logout func in apiAuth
+- create useLogout hook to call logout using react query
+
 ## Features
 
 ### authentication

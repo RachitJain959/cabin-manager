@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useUser } from "../features/authentication/useUser";
 import Spinner from "./Spinner";
 import { useEffect } from "react";
-import { isAuthApiError } from "@supabase/supabase-js";
 import { useNavigate } from "react-router-dom";
 
 const FullPage = styled.div`
