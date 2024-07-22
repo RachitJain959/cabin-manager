@@ -216,7 +216,9 @@ function handleClick(e) {
 ### 18. Authorization of Protected Routes
 
 - create Protected Route
-- create getUser in apiAUth
+- create getCurrentUser in apiAUth
+- create useUser
+-
 
 ## Features
 
