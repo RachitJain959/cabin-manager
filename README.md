@@ -218,7 +218,7 @@ function handleClick(e) {
 - create Protected Route
 - create getCurrentUser in apiAUth
 - create useUser
--
+- create useEffect hook to naviagte to either login page or render application based on user login
 
 ## Features
 
