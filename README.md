@@ -209,8 +209,14 @@ function handleClick(e) {
 ### 17. Authenticate user login
 
 - create authentication folder, LoginFOrm, FOrmRowVetical
+- enable route authentication in supabase
 - create apiAuth in services
 - create useLogin & SpinnerMini
+
+### 18. Authorization of Protected Routes
+
+- create Protected Route
+- create getUser in apiAUth
 
 ## Features
 
