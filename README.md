@@ -206,6 +206,10 @@ function handleClick(e) {
   - create useDeleteBooking.jsx
   - render deleteBooking in bookingRow & BookingDetails
 
+### 17. Authenticate user login
+
+-
+
 ## Features
 
 ### authentication
