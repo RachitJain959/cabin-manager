@@ -7,12 +7,16 @@ import Input from "../../ui/Input";
 // Email regex: /\S+@\S+\.\S+/
 
 function SignupForm() {
-  const { register, formState, getValues } = useForm();
+  const { register, formState, getValues, handleSubmit } = useForm();
   const { errors } = formState;
 
+  function onSubmit(data) {
+    console.log(data);
+  }
+
   return (
-    <Form>
-      <FormRow label="Full name" error={""}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <FormRow label="Full name" error={errors?.fullName?.message}>
         <Input
           type="text"
           id="fullName"
@@ -20,7 +24,7 @@ function SignupForm() {
         />
       </FormRow>
 
-      <FormRow label="Email address" error={""}>
+      <FormRow label="Email address" error={errors?.email?.message}>
         <Input
           type="email"
           id="email"
@@ -34,7 +38,10 @@ function SignupForm() {
         />
       </FormRow>
 
-      <FormRow label="Password (min 8 characters)" error={""}>
+      <FormRow
+        label="Password (min 8 characters)"
+        error={errors?.password?.message}
+      >
         <Input
           type="password"
           id="password"
@@ -48,7 +55,7 @@ function SignupForm() {
         />
       </FormRow>
 
-      <FormRow label="Repeat password" error={""}>
+      <FormRow label="Repeat password" error={errors?.passwordConfirm?.message}>
         <Input
           type="password"
           id="passwordConfirm"
