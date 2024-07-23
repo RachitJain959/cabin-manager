@@ -28,6 +28,7 @@ function SignupForm() {
           type="text"
           id="fullName"
           {...register("fullName", { required: "This field is required" })}
+          disabled={isLoading}
         />
       </FormRow>
 
@@ -42,6 +43,7 @@ function SignupForm() {
               message: "Please provide a valid email address",
             },
           })}
+          disabled={isLoading}
         />
       </FormRow>
 
@@ -52,6 +54,7 @@ function SignupForm() {
         <Input
           type="password"
           id="password"
+          disabled={isLoading}
           {...register("password", {
             required: "This field is required",
             minLength: {
@@ -66,6 +69,7 @@ function SignupForm() {
         <Input
           type="password"
           id="passwordConfirm"
+          disabled={isLoading}
           {...register("passwordConfirm", {
             required: "This field is required",
             validate: (value) =>
