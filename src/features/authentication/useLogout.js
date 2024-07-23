@@ -7,7 +7,7 @@ export function useLogout() {
   const queryClient = useQueryClient();
 
   const { mutate: logout, isLoading } = useMutation({
-    mutationFn: logoutApi(),
+    mutationFn: logoutApi,
     onSuccess: () => {
       queryClient.removeQueries(); //removes user from react query cache
       navigate("/login", { replace: true });
