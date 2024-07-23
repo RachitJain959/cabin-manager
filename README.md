@@ -232,7 +232,8 @@ function handleClick(e) {
 ### 20. Sign Up Form
 
 - create SignupForm.jsx
-- add register, formState from useForm in SignupForm
+- add register, formState, errors, getValues from useForm in SignupForm
+- create signup in apiAuth
 
 ## Bugs
 
