@@ -229,6 +229,10 @@ function handleClick(e) {
   },
   ```
 
+### 20. Sign Up Form
+
+- create SignupForm.jsx
+
 ## Bugs
 
 1. h2 element showing h1: use 'as' instead of 'type' in styled components.
