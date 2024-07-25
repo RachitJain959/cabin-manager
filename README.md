@@ -237,7 +237,7 @@ function handleClick(e) {
 
 ### App Header
 
-- headerMenu.jsx
+- headerMenu.jsx, userAvatar.jsx
 
 ## Bugs
 
