@@ -233,7 +233,11 @@ function handleClick(e) {
 
 - create SignupForm.jsx
 - add register, formState, errors, getValues from useForm in SignupForm
-- create signup in apiAuth
+- create signup in apiAuth & useSignup
+
+### App Header
+
+- headerMenu.jsx
 
 ## Bugs
 

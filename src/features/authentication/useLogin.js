@@ -12,6 +12,7 @@ export function useLogin() {
     onSuccess: (user) => {
       // putting user data into react query cache to render it quickly after logging in
       queryClient.setQueryData(["user"], user.user);
+      toast.success("Logged in successfully!");
       navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
