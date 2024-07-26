@@ -17,7 +17,7 @@ const Main = styled.main`
   ::-webkit-scrollbar {
     width: 1rem;
     height: 1rem;
-    background-color: #292524;
+    background-color: var(--color-grey-200);
   }
 
   ::-webkit-scrollbar-thumb {
@@ -27,7 +27,7 @@ const Main = styled.main`
 `;
 
 const Container = styled.div`
-  max-width: 100rem;
+  max-width: 120rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
