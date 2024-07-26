@@ -22,6 +22,7 @@ function useDarkMode() {
   const context = useContext(DarkModeContext);
   if (context === undefined)
     throw new Error("DarkModeContext is used outside of DarkModeProvider");
+  return context;
 }
 
 export { DarkModeProvider, useDarkMode };
