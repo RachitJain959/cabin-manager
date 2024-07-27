@@ -87,6 +87,8 @@ ${
 --color-teal-100: #155c67;
 --color-teal-700: #b3eff0;
 
+${"" /* #C6CAD0 #3E5033 */}
+
 --color-red-100: #fee2e2;
 --color-red-700: #b91c1c;
 --color-red-800: #991b1b;
