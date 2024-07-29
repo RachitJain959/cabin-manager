@@ -8,7 +8,7 @@ import {
   HiTrash,
 } from "react-icons/hi2";
 
-import Tag from "../../../starter/ui/Tag";
+import Tag from "../../ui/Tag";
 import Table from "../../ui/Table";
 import Modal from "../../ui/Modal";
 import Menus from "../../ui/Menus";

@@ -8,7 +8,7 @@ import {
 } from "react-icons/hi2";
 
 import DataItem from "../../../starter/ui/DataItem";
-import { Flag } from "../../../starter/ui/Flag";
+import { Flag } from "../../ui/Flag";
 
 import { formatDistanceFromNow, formatCurrency } from "../../utils/helpers";
 
