@@ -4,7 +4,7 @@ import { useRecentStays } from "./useRecentStays";
 import Spinner from "../../ui/Spinner";
 import Stats from "./Stats";
 import { useCabins } from "../cabins/useCabins";
-import SalesChart from "../../../starter/features/dashboard/SalesChart";
+import SalesChart from "./SalesChart";
 
 const StyledDashboardLayout = styled.div`
   display: grid;
