@@ -5,7 +5,7 @@ import Row from "../../ui/Row";
 import Heading from "../../ui/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
-import ButtonText from "../../../starter/ui/ButtonText";
+import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
