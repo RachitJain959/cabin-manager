@@ -6,7 +6,7 @@ import Heading from "../../ui/Heading";
 import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
-import ButtonText from "../../../starter/ui/ButtonText";
+import ButtonText from "../../ui/ButtonText";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "./useBooking";
@@ -17,6 +17,7 @@ import ConfirmDelete from "../../ui/ConfirmDelete";
 import { useDeleteBooking } from "./useDeleteBooking";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import { useCheckout } from "../check-in-out/useCheckOut";
+import Empty from "../../ui/Empty";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -33,6 +34,7 @@ function BookingDetail() {
   const moveBack = useMoveBack();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resource="booking" />;
 
   const { status, id: bookingId } = booking;
 
