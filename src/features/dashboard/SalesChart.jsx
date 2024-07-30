@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DashboardBox from "../../../starter/features/dashboard/DashboardBox";
+import DashboardBox from "./DashboardBox";
 import {
   Area,
   AreaChart,
