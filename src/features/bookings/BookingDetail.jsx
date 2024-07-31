@@ -69,7 +69,11 @@ function BookingDetail() {
         {status === "checked-in" && (
           <Button
             icon={<HiArrowRightOnRectangle />}
-            onClick={() => checkout(bookingId)}
+            onClick={() => {
+              user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                ? toast.error("Demo User, read only!")
+                : checkout(bookingId);
+            }}
             disabled={isCheckingOut}
           >
             Check-out
@@ -87,7 +91,7 @@ function BookingDetail() {
               disabled={isDeleting}
               onConfirm={() => {
                 user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
-                  ? toast.error("Test User, read only!")
+                  ? toast.error("Demo User, read only!")
                   : deleteBooking(bookingId, {
                       onSettled: () => navigate(-1),
                     });

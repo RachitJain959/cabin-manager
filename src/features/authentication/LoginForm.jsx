@@ -16,16 +16,12 @@ function LoginForm() {
 
   function handleSubmitDemo(e) {
     e.preventDefault();
-    login(
-      //   { email: demoUser.email, password: demoUser.password },
-      demoUser,
-      {
-        onSettled: () => {
-          setEmail("");
-          setPassword("");
-        },
-      }
-    );
+    login(demoUser, {
+      onSettled: () => {
+        setEmail("");
+        setPassword("");
+      },
+    });
   }
 
   function handleSubmit(e) {

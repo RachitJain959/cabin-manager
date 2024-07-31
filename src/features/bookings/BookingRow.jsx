@@ -18,6 +18,8 @@ import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
 import { useCheckout } from "../check-in-out/useCheckOut";
 import { useDeleteBooking } from "./useDeleteBooking";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -63,6 +65,7 @@ function BookingRow({
   const navigate = useNavigate();
   const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
+  const { user } = useUser();
 
   const statusToTagName = {
     unconfirmed: "blue",
@@ -117,7 +120,11 @@ function BookingRow({
             {status === "checked-in" && (
               <Menus.Button
                 icon={<HiArrowRightOnRectangle />}
-                onClick={() => checkout(bookingId)}
+                onClick={() => {
+                  user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                    ? toast.error("Demo User. Read only!")
+                    : checkout(bookingId);
+                }}
                 disabled={isCheckingOut}
               >
                 Check-out
@@ -134,7 +141,11 @@ function BookingRow({
           <ConfirmDelete
             resourceName="booking"
             disabled={isDeleting}
-            onConfirm={() => deleteBooking(bookingId)}
+            onConfirm={() => {
+              user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                ? toast.error("Demo User. Read only!")
+                : deleteBooking(bookingId);
+            }}
           />
         </Modal.Window>
       </Modal>
