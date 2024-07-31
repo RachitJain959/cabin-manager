@@ -18,6 +18,8 @@ import { useDeleteBooking } from "./useDeleteBooking";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import { useCheckout } from "../check-in-out/useCheckOut";
 import Empty from "../../ui/Empty";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -29,6 +31,7 @@ function BookingDetail() {
   const { booking, isLoading } = useBooking();
   const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
+  const { user } = useUser();
 
   const navigate = useNavigate();
   const moveBack = useMoveBack();
@@ -82,11 +85,13 @@ function BookingDetail() {
             <ConfirmDelete
               resourceName="booking"
               disabled={isDeleting}
-              onConfirm={() =>
-                deleteBooking(bookingId, {
-                  onSettled: () => navigate(-1),
-                })
-              }
+              onConfirm={() => {
+                user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                  ? toast.error("Test User, read only!")
+                  : deleteBooking(bookingId, {
+                      onSettled: () => navigate(-1),
+                    });
+              }}
             />
           </Modal.Window>
         </Modal>
