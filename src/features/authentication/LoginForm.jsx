@@ -7,10 +7,26 @@ import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 
 function LoginForm() {
-  const [email, setEmail] = useState("test@test.com");
-  const [password, setPassword] = useState("secret123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { login, isLoading } = useLogin();
+
+  const demoUser = { email: "test@email.com", password: "asdfghjk" };
+
+  function handleSubmitDemo(e) {
+    e.preventDefault();
+    login(
+      //   { email: demoUser.email, password: demoUser.password },
+      demoUser,
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +45,7 @@ function LoginForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form>
       <FormRowVertical label="Email address">
         <Input
           type="email"
@@ -52,7 +68,12 @@ function LoginForm() {
         />
       </FormRowVertical>
       <FormRowVertical>
-        <Button size="large">{!isLoading ? "Log In" : <SpinnerMini />}</Button>
+        <Button size="large" onClick={handleSubmit}>
+          {!isLoading ? "Log In" : <SpinnerMini />}
+        </Button>
+        <Button size="large" onClick={handleSubmitDemo}>
+          Explore the app
+        </Button>
       </FormRowVertical>
     </Form>
   );
