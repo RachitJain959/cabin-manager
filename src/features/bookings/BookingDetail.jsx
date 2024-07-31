@@ -61,7 +61,13 @@ function BookingDetail() {
 
       <ButtonGroup>
         {status === "unconfirmed" && (
-          <Button onClick={() => navigate(`/checkin/${bookingId}`)}>
+          <Button
+            onClick={() => {
+              user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                ? toast.error("Demo User, read only!")
+                : navigate(`/checkin/${bookingId}`);
+            }}
+          >
             Check-in
           </Button>
         )}

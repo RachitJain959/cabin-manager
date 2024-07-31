@@ -16,6 +16,8 @@ import { useEffect } from "react";
 import { useCheckin } from "./useCheckin";
 import { useSettings } from "../settings/useSettings";
 import { formatCurrency } from "../../utils/helpers";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 const Box = styled.div`
   /* Box */
@@ -34,8 +36,8 @@ function CheckinBooking() {
   useEffect(() => setConfirmPaid(booking?.isPaid ?? false), [booking]);
 
   const moveBack = useMoveBack();
-
   const { checkin, isCheckingIn } = useCheckin();
+  const { user } = useUser();
 
   if (isLoading || isLoadingSettings) return <Spinner />;
 
@@ -52,6 +54,11 @@ function CheckinBooking() {
     settings.breakfastPrice * numNights * numGuests;
 
   function handleCheckin() {
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      return;
+    }
+
     if (!confirmPaid) return;
 
     if (addBreakfast) {
