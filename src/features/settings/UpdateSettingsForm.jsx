@@ -4,6 +4,8 @@ import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
 import { useUpdateSetting } from "./useUpdateSetting";
 import { useSettings } from "./useSettings";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 function UpdateSettingsForm() {
   const {
@@ -17,8 +19,14 @@ function UpdateSettingsForm() {
   } = useSettings();
 
   const { isUpdating, updateSetting } = useUpdateSetting();
+  const { user } = useUser();
 
   function handleUpdate(e, field) {
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      return;
+    }
+
     const { value } = e.target;
 
     if (!value) return;
