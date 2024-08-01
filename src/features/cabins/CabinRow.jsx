@@ -67,10 +67,10 @@ function CabinRow({ cabin }) {
   } = cabin;
 
   function handleDuplicate() {
-    // if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
-    //   toast.error("Demo User. Read only!");
-    //   return;
-    // }
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      return;
+    }
 
     createCabin({
       name: `Copy of ${name}`,
@@ -107,8 +107,8 @@ function CabinRow({ cabin }) {
               <Menus.List id={cabinId}>
                 <Menus.Button
                   icon={<HiSquare2Stack />}
-                  onClick={() => handleDuplicate}
-                  //   disabled={isCreating}
+                  onClick={handleDuplicate}
+                  disabled={isCreating}
                 >
                   Duplicate
                 </Menus.Button>
