@@ -9,6 +9,8 @@ import Textarea from "../../ui/Textarea";
 
 import { useCreateCabin } from "./useCreateCabin";
 import { useUpdateCabin } from "./useUpdateCabin";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { id: editId, ...editValues } = cabinToEdit;
@@ -21,12 +23,19 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 
   const { isCreating, createCabin } = useCreateCabin();
   const { isEditing, editCabin } = useUpdateCabin();
+  const { user } = useUser();
 
   const isWorking = isCreating || isEditing;
 
   function onSubmit(data) {
     // console.log(data.image[0]);
     // if image is a string, it takes the old url img or it takes the new img from data
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      onCloseModal?.();
+      return;
+    }
+
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
     if (isEditSession)
@@ -115,7 +124,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       </FormRow>
 
       <FormRow
-        label="Description for website"
+        label="Description for cabin"
         error={errors?.description?.message}
       >
         <Textarea

@@ -9,6 +9,8 @@ import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import toast from "react-hot-toast";
+import { useUser } from "../authentication/useUser";
 
 // const TableRow = styled.div`
 //   display: grid;
@@ -52,6 +54,7 @@ const Discount = styled.div`
 function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const { isCreating, createCabin } = useCreateCabin();
+  const { user } = useUser();
 
   const {
     id: cabinId,
@@ -64,6 +67,11 @@ function CabinRow({ cabin }) {
   } = cabin;
 
   function handleDuplicate() {
+    // if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+    //   toast.error("Demo User. Read only!");
+    //   return;
+    // }
+
     createCabin({
       name: `Copy of ${name}`,
       maxCapacity,
@@ -99,7 +107,8 @@ function CabinRow({ cabin }) {
               <Menus.List id={cabinId}>
                 <Menus.Button
                   icon={<HiSquare2Stack />}
-                  onClick={handleDuplicate}
+                  onClick={() => handleDuplicate}
+                  //   disabled={isCreating}
                 >
                   Duplicate
                 </Menus.Button>
@@ -121,7 +130,11 @@ function CabinRow({ cabin }) {
                 <ConfirmDelete
                   resourceName="cabins"
                   disabled={isDeleting}
-                  onConfirm={() => deleteCabin(cabinId)}
+                  onConfirm={() => {
+                    user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a"
+                      ? toast.error("Demo User. Read only!")
+                      : deleteCabin(cabinId);
+                  }}
                 />
               </Modal.Window>
             </Menus.Menu>
