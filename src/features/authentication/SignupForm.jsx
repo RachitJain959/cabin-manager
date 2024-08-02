@@ -4,6 +4,8 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
+import { useUser } from "./useUser";
+import toast from "react-hot-toast";
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -11,8 +13,15 @@ function SignupForm() {
   const { signup, isLoading } = useSignup();
   const { register, formState, getValues, handleSubmit, reset } = useForm();
   const { errors } = formState;
+  const { user } = useUser();
 
   function onSubmit({ fullName, email, password }) {
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      reset();
+      return;
+    }
+
     signup(
       { fullName, email, password },
       {
