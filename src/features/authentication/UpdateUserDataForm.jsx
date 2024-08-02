@@ -8,6 +8,7 @@ import Input from "../../ui/Input";
 
 import { useUser } from "./useUser";
 import { useUpdateUser } from "./useUpdateUser";
+import toast from "react-hot-toast";
 
 function UpdateUserDataForm() {
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
@@ -22,11 +23,21 @@ function UpdateUserDataForm() {
 
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
+  const { user } = useUser();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!fullName) return;
+    if (!fullName) {
+      toast.error("Full name required");
+      return;
+    }
+
+    if (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a") {
+      toast.error("Demo User. Read only!");
+      return;
+    }
+
     updateUser(
       { fullName, avatar },
       {
@@ -48,6 +59,7 @@ function UpdateUserDataForm() {
       <FormRow label="Email address">
         <Input value={email} disabled />
       </FormRow>
+
       <FormRow label="Full name">
         <Input
           type="text"
@@ -57,6 +69,7 @@ function UpdateUserDataForm() {
           disabled={isUpdating}
         />
       </FormRow>
+
       <FormRow label="Avatar image">
         <FileInput
           id="avatar"
@@ -65,6 +78,7 @@ function UpdateUserDataForm() {
           onChange={(e) => setAvatar(e.target.files[0])}
         />
       </FormRow>
+
       <FormRow>
         <Button
           type="reset"
