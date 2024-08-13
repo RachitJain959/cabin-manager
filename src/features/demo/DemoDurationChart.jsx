@@ -31,37 +31,37 @@ const ChartBox = styled.div`
 const startDataLight = [
   {
     duration: "1 night",
-    value: 0,
+    value: 2,
     color: "#ef4444",
   },
   {
     duration: "2 nights",
-    value: 0,
+    value: 4,
     color: "#f97316",
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 3,
     color: "#eab308",
   },
   {
     duration: "4-5 nights",
-    value: 0,
+    value: 3,
     color: "#84cc16",
   },
   {
     duration: "6-7 nights",
-    value: 0,
+    value: 2,
     color: "#22c55e",
   },
   {
     duration: "8-14 nights",
-    value: 0,
+    value: 1,
     color: "#14b8a6",
   },
   {
     duration: "15-21 nights",
-    value: 0,
+    value: 1,
     color: "#3b82f6",
   },
   {
@@ -74,37 +74,37 @@ const startDataLight = [
 const startDataDark = [
   {
     duration: "1 night",
-    value: 0,
+    value: 2,
     color: "#b91c1c",
   },
   {
     duration: "2 nights",
-    value: 0,
+    value: 4,
     color: "#ff6600",
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 3,
     color: "#d4a10a",
   },
   {
     duration: "4-5 nights",
-    value: 0,
+    value: 3,
     color: "#6ebf00",
   },
   {
     duration: "6-7 nights",
-    value: 0,
+    value: 2,
     color: "#1db954",
   },
   {
     duration: "8-14 nights",
-    value: 0,
+    value: 1,
     color: "#00bfb3",
   },
   {
     duration: "15-21 nights",
-    value: 0,
+    value: 1,
     color: "#3d70f0",
   },
   {
@@ -141,7 +141,7 @@ function prepareData(startData, stays) {
   return data;
 }
 
-function DurationChart({ confirmedStays }) {
+function DemoDurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
@@ -152,7 +152,7 @@ function DurationChart({ confirmedStays }) {
       <ResponsiveContainer width="100%" height={240}>
         <PieChart>
           <Pie
-            data={data}
+            data={startData}
             nameKey="duration"
             dataKey="value"
             innerRadius={80}
@@ -184,4 +184,4 @@ function DurationChart({ confirmedStays }) {
   );
 }
 
-export default DurationChart;
+export default DemoDurationChart;
