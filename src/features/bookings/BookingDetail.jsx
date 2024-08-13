@@ -16,10 +16,10 @@ import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import { useDeleteBooking } from "./useDeleteBooking";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
-import { useCheckout } from "../check-in-out/useCheckOut";
 import Empty from "../../ui/Empty";
 import { useUser } from "../authentication/useUser";
 import toast from "react-hot-toast";
+import { useCheckout } from "../check-in-out/useCheckout";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
   const { booking, isLoading } = useBooking();
-  const { checkout, isCheckingOut } = useCheckout();
+  const { checkout, isCheckingOut } = useCheckout;
   const { deleteBooking, isDeleting } = useDeleteBooking();
   const { user } = useUser();
 
