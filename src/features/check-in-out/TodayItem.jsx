@@ -4,6 +4,8 @@ import { Flag } from "../../ui/Flag";
 import Button from "../../ui/Button";
 import { Link } from "react-router-dom";
 import CheckoutButton from "./CheckoutButton";
+import { useUser } from "../authentication/useUser";
+import toast from "react-hot-toast";
 
 const StyledTodayItem = styled.li`
   display: grid;
@@ -26,6 +28,7 @@ const Guest = styled.div`
 
 function TodayItem({ activity }) {
   const { id, status, guests, numNights } = activity;
+  const { user } = useUser();
 
   return (
     <StyledTodayItem>
@@ -36,16 +39,27 @@ function TodayItem({ activity }) {
       <Guest> {guests.fullName} </Guest>
       <div> {numNights} nights</div>
 
-      {status === "unconfirmed" && (
-        <Button
-          size="small"
-          variation="primary"
-          as={Link}
-          to={`/checkin/${id}`}
-        >
-          Check in
-        </Button>
-      )}
+      {status === "unconfirmed" &&
+        (user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a" ? (
+          <Button
+            size="small"
+            variation="primary"
+            onClick={() => {
+              toast.error("Demo User. Read only!");
+            }}
+          >
+            Check in
+          </Button>
+        ) : (
+          <Button
+            size="small"
+            variation="primary"
+            as={Link}
+            to={`/checkin/${id}`}
+          >
+            Check in
+          </Button>
+        ))}
 
       {status === "checked-in" && <CheckoutButton bookingId={id} />}
     </StyledTodayItem>
