@@ -45,7 +45,7 @@ This project is a complex, fully-featured application utilizing React and variou
 The project is organized in a modular way, separating concerns into different folders and files:
 
 - `src/`
-  - `context/`
+  - `context/`: Dark Mode context
   - `components/`: Reusable UI components.
   - `pages/`: Individual pages for the application.
   - `hooks/`: Custom hooks for reusable logic.
