@@ -97,6 +97,8 @@ function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
   const { user } = useUser();
 
+  console.log(activities);
+
   return (
     <StyledToday>
       <Row type="horizontal">
@@ -114,14 +116,12 @@ function TodayActivity() {
               <TodayItem activity={activity} key={activity.id} />
             ))}
           </TodayList>
-        ) : user.id === "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a" ? (
+        ) : (
           <TodayList>
             {fakeActivities.map((activity) => (
               <TodayItem activity={activity} key={activity.id} />
             ))}
           </TodayList>
-        ) : (
-          <NoActivity>No activity today...</NoActivity>
         )
       ) : (
         <Spinner />
