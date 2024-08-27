@@ -127,3 +127,36 @@ To get started with the project, follow these steps:
    ```
    npm run dev
    ```
+
+## Bugs and Fixes
+
+1. h2 element showing h1: use 'as' instead of 'type' in styled components.
+2. pagination last page filter: {code: 'PGRST103', details: 'An offset of 15 was requested, but there are only 9 rows.', hint: null, message: 'Requested range not satisfiable'}
+   - Fix: if (searchParams.get("page")) searchParams.set("page", 1);
+3. Login bug:
+
+#### **userLogin.jsx**
+
+```jsx
+onSuccess: (user) => {
+    queryClient.setQueriesData(["user", user]); // error line
+    navigate("/dashboard");
+},
+```
+
+- after login, we access dashboard which is inside Protected Route
+- if a user is not logged in/authenticated, it'll be reidirected to login page.
+- authentication is checked insde useUser via getCurrentUser func which return null if no session/no logged-in user.
+- setQueriesData is a wrong fucn thus getCurrentUser always gets null even if the user is authenticated
+- Fix: setQueryData sets the user data in reacct query cache
+
+```js
+onSuccess: (user) => {
+  queryClient.setQueryData(["user"], user.user); //fixed line
+  navigate("/dashboard");
+};
+```
+
+\* 4. Broken Image error in update user
+
+5. Menu button close
