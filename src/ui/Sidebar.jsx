@@ -24,7 +24,7 @@ function Sidebar() {
       <Logo />
       <MainNav />
 
-      {user.id !== "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a" && <Uploader />}
+      {/* {user.id !== "06d6733e-c5e1-42ea-b8b7-2a20deddfb2a" && <Uploader />} */}
     </StyledSidebar>
   );
 }

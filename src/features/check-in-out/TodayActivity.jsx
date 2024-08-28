@@ -5,7 +5,6 @@ import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
-import { useUser } from "../authentication/useUser";
 
 const StyledToday = styled.div`
   /* Box */
@@ -33,12 +32,12 @@ const TodayList = styled.ul`
   -ms-overflow-style: none;
 `;
 
-const NoActivity = styled.p`
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin-top: 0.8rem;
-`;
+// const NoActivity = styled.p`
+//   text-align: center;
+//   font-size: 1.8rem;
+//   font-weight: 500;
+//   margin-top: 0.8rem;
+// `;
 
 const fakeActivities = [
   {
@@ -95,7 +94,6 @@ const fakeActivities = [
 
 function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
-  const { user } = useUser();
 
   console.log(activities);
 
