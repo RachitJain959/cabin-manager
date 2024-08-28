@@ -5,6 +5,7 @@
 ## Table of Contents
 
 1. [Overview](#overview)
+1. [Project Images](#project-images)
 1. [Project Requirements](#project-requirements)
 1. [Features](#features)
 1. [Technologies Used](#technologies-used)
@@ -16,6 +17,78 @@
 ## Overview
 
 This project is a complex, fully-featured application utilizing React and various modern libraries to provide a seamless and responsive user experience. It incorporates state management with React Query, custom hooks, and global styles to ensure a consistent look and feel across the application.
+
+## Project Images
+
+### Pages
+
+**Login**
+
+![Login-Light](images/pages/Login-light.png) ![Login-dark](images/pages/Login-dark.png)
+
+**Home**
+
+![Home-Light](images/pages/home-light.png)
+
+![Home-dark](images/pages/home-dark.png)
+
+**Bookings**
+
+![Bookings-light](images/pages/bookings-pg-light.png)
+
+![Bookings-dark](images/pages/bookings-pg-dark.png)
+
+**Cabins**
+
+![Cabins-light](images/pages/cabins-pg-light.png)
+
+![Cabins-dark](images/pages/cabins-pg-dark.png)
+
+**Signup**
+
+![Signup-light](images/pages/signup-pg-light.png)
+
+![Signup-dark](images/pages/signup-pg-dark.png)
+
+**Setting**
+
+![Settings-light](images/pages/settings-pg-light.png)
+
+![Settings-dark](images/pages/settings-pg-dark.png)
+
+## Features
+
+**Dashboard**
+
+![Dashboard-light](images/features/dash-light.png)
+
+![Dashboard-dark](images/features/dash-dark.png)
+
+**Cabins**
+
+![Cabins-light](images/features/cabins-light.png)
+
+![Cabins-dark](images/features/cabins-dark.png)
+
+**Edit Cabin**
+
+![Edit-Cabin-light](images/features/edit-cabin-light.png)
+
+![Edit-Cabin-dark](images/features/edit-cabin-dark.png)
+
+**Booking Detail**
+
+![Booking-Detail-light](images/features/booking-detail-light.png)
+
+![Booking-Detail-dark](images/features/booking-detail-dark.png)
+
+**Check-in Booking**
+
+![Checkin-light](images/features/checkin-paid.png)
+
+![Checkin-dark](images/features/checkin-unpaid.png)
+
+![Checkin-dark](images/features/checkin-breakfast.png)
 
 ## Project Requirements
 
