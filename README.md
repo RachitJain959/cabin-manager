@@ -24,7 +24,7 @@ This project is a complex, fully-featured application utilizing React and variou
 
 **Login**
 
-![Login-Light](images/pages/Login-light.png) ![Login-dark](images/pages/Login-dark.png)
+![Login-Light](images/pages/Login-light1.png) ![Login-dark](images/pages/Login-dark.png)
 
 **Home**
 
